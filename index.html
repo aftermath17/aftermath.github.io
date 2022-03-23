@@ -192,6 +192,108 @@
             
 
   
+    <article id="post-那些注定要走过的日子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/" target="_blank">那些注定要走过的日子</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/" class="archive-article-date">
+        <time datetime="2022-03-23T12:51:11.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-23</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>忙活了几天，写好了Lingo</p>
+<p>只是一直不知道怎么打出数学公式，被迫拖更●︿●</p>
+<hr>
+<p>再次鸣谢<a target="_blank" rel="noopener" href="https://akiekaze.github.io/">耗子</a>的帮助，什么渲染啥的一顿操作下来顺利解决了这一难题</p>
+<hr>
+<p>之前还在考虑写一点学习C的过程，尽管都说C语言是主流，现在还是觉得Python挺好的</p>
+<hr>
+<p>用LaTeX还是没能绘制出像样的表格，在LBP&amp;LTP里只能先用方形矩阵代替啦</p>
+<hr>
+<p>唉，这学期又注定不好过了</p>
+<p>本想利用空隙时间好好学习人工智能，哪知还没好好感受一下周末，它就已经没了π_π</p>
+<p>仿佛又回到了去年最难熬的时候，不知道这次我会做出什么样的改变呢？</p>
+<hr>
+<p>想见的落日，想见的人，你说还要等到什么时候</p>
+<p>总是以为时间会治愈一切，却没有察觉到那些逝去的时光又带走了多少生活</p>
+<hr>
+<p>还是许下愿望，疫情早点结束吧~</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-重要基本概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -330,12 +432,16 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构)</p>
+<p>如将$\begin{bmatrix}<br>117&amp; 21 &amp; 43\\<br>64 &amp; 25 &amp; 9\\<br>22&amp; 23 &amp;58<br>\end{bmatrix}$(灰度值)</p>
+<p>映成$\begin{bmatrix}<br>1&amp; 0 &amp; 1\\<br>1 &amp;  &amp; 0\\<br>0&amp; 0 &amp;1<br>\end{bmatrix}$(纹理值)</p>
+<p>则中心点纹理值 = $1\times 2^{0} +  0\times 2^{1} +1\times 2^{2} +0\times 2^{3} +0\times 2^{4} +1\times 2^{5} +1\times 2^{6} +0\times 2^{7}$  (右上起始)</p>
+<p>从而达到牺牲图像最边缘来换取内部唯一纹理值</p>
 <p>与词袋模型各有优劣</p>
 <hr>
 <p>LBP过程不重要，重要的是它的编码思想——</p>
 <p>1）描述了一种分布</p>
 <p>2）叙述了一种结构</p>
-<p>3）遵循编码唯一性原则（双射/一一映射）</p>
+<p>3）遵循编码唯一性原则（一一映射）</p>
 <p>这些共同组成了判别信息</p>
 <hr>
 <p>LBP存在的问题：对光敏感</p>
@@ -951,15 +1057,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">概率论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Lingo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">概率论</a>
               </li>
             
             <div class="clearfix"></div>

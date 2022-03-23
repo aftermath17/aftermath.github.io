@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构) 与词袋模型各有优劣  LBP过程不重要，重要的是它的编码思想—— 1）描述了一种分布 2）叙述了一种结构 3）遵循编码唯一性原则（双射&#x2F;一一映射） 这些共同组成了判别信息  LBP存在的问题：对光敏感 改进方式：放缩样本间距—— 即在不同光照下两点的值可能差距很大，缩小以尽可能消除光照影响 常见方法：  最">
+  <meta name="description" content="LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构) 如将$\begin{bmatrix}117&amp; 21 &amp; 43\\64 &amp; 25 &amp; 9\\22&amp; 23 &amp;58\end{bmatrix}$(灰度值) 映成$\begin{bmatrix}1&amp; 0 &amp; 1\\1 &amp;  &amp; 0\\0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LBP与LTP">
 <meta property="og:url" content="http://example.com/2022/03/23/LBP%E4%B8%8ELTP/index.html">
 <meta property="og:site_name" content="hello~">
-<meta property="og:description" content="LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构) 与词袋模型各有优劣  LBP过程不重要，重要的是它的编码思想—— 1）描述了一种分布 2）叙述了一种结构 3）遵循编码唯一性原则（双射&#x2F;一一映射） 这些共同组成了判别信息  LBP存在的问题：对光敏感 改进方式：放缩样本间距—— 即在不同光照下两点的值可能差距很大，缩小以尽可能消除光照影响 常见方法：  最">
+<meta property="og:description" content="LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构) 如将$\begin{bmatrix}117&amp; 21 &amp; 43\\64 &amp; 25 &amp; 9\\22&amp; 23 &amp;58\end{bmatrix}$(灰度值) 映成$\begin{bmatrix}1&amp; 0 &amp; 1\\1 &amp;  &amp; 0\\0">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-23T00:59:03.074Z">
-<meta property="article:modified_time" content="2022-03-23T09:41:09.584Z">
+<meta property="article:modified_time" content="2022-03-23T13:32:20.394Z">
 <meta property="article:author" content="Aftermath">
 <meta property="article:tag" content="人工智能基础">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">383字</span>
+      <span class="post-count">492字</span>
     </span>
   </span>
 
@@ -244,12 +244,16 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构)</p>
+<p>如将$\begin{bmatrix}<br>117&amp; 21 &amp; 43\\<br>64 &amp; 25 &amp; 9\\<br>22&amp; 23 &amp;58<br>\end{bmatrix}$(灰度值)</p>
+<p>映成$\begin{bmatrix}<br>1&amp; 0 &amp; 1\\<br>1 &amp;  &amp; 0\\<br>0&amp; 0 &amp;1<br>\end{bmatrix}$(纹理值)</p>
+<p>则中心点纹理值 = $1\times 2^{0} +  0\times 2^{1} +1\times 2^{2} +0\times 2^{3} +0\times 2^{4} +1\times 2^{5} +1\times 2^{6} +0\times 2^{7}$  (右上起始)</p>
+<p>从而达到牺牲图像最边缘来换取内部唯一纹理值</p>
 <p>与词袋模型各有优劣</p>
 <hr>
 <p>LBP过程不重要，重要的是它的编码思想——</p>
 <p>1）描述了一种分布</p>
 <p>2）叙述了一种结构</p>
-<p>3）遵循编码唯一性原则（双射/一一映射）</p>
+<p>3）遵循编码唯一性原则（一一映射）</p>
 <p>这些共同组成了判别信息</p>
 <hr>
 <p>LBP存在的问题：对光敏感</p>
@@ -562,15 +566,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">概率论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Lingo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">概率论</a>
               </li>
             
             <div class="clearfix"></div>
