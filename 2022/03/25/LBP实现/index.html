@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/3 | hello~</title>
+  <title>LBP实现 | hello~</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hello~">
-<meta property="og:url" content="http://example.com/archives/2022/03/index.html">
+  <meta name="description" content="LBP程序简图——准备工作 12% Define directions by spoints . (定义8行2列坐标矩阵)spoints&#x3D;[-1 -1; -1 0; -1 1; 0 -1; -0 1; 1 -1; 1 0; 1 1];  %spoints： $\begin{bmatrix} -1,-1 &amp;-1,0  &amp;-1,1 \\  0,-1&amp; 0,0 &amp;0,1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LBP实现">
+<meta property="og:url" content="http://example.com/2022/03/25/LBP%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="hello~">
+<meta property="og:description" content="LBP程序简图——准备工作 12% Define directions by spoints . (定义8行2列坐标矩阵)spoints&#x3D;[-1 -1; -1 0; -1 1; 0 -1; -0 1; 1 -1; 1 0; 1 1];  %spoints： $\begin{bmatrix} -1,-1 &amp;-1,0  &amp;-1,1 \\  0,-1&amp; 0,0 &amp;0,1">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-25T00:53:13.830Z">
+<meta property="article:modified_time" content="2022-03-25T01:07:18.198Z">
 <meta property="article:author" content="Aftermath">
+<meta property="article:tag" content="人工智能基础">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hello~" type="application/atom+xml">
@@ -185,41 +190,75 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-LBP实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      LBP实现
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2022/03/25/LBP%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
         <time datetime="2022-03-25T00:53:13.830Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/25/LBP%E5%AE%9E%E7%8E%B0/" target="_blank">LBP实现</a>
   
-    </h1>
-  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">318字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
-          
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>LBP程序简图——准备工作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% Define directions by spoints . (定义8行2列坐标矩阵)</span><br><span class="line">spoints=[-1 -1; -1 0; -1 1; 0 -1; -0 1; 1 -1; 1 0; 1 1];</span><br></pre></td></tr></table></figure>
+
+<p>%spoints：</p>
+<p>$\begin{bmatrix}<br> -1,-1 &amp;-1,0  &amp;-1,1 \\<br>  0,-1&amp; 0,0 &amp;0,1 \\<br> 1,-1 &amp; 1,0 &amp;<br>1,1\end{bmatrix}$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">% Determine the dimensions of the input image . (确定输入图像尺寸)</span><br><span class="line">[ysize xsize] = size(image);</span><br><span class="line">miny=min(spoints(:,1));</span><br><span class="line">maxy=max(spoints(:,1));</span><br><span class="line">minx=min(spoints(:,2));</span><br><span class="line">maxx=max(spoints(:,2));</span><br><span class="line"></span><br><span class="line">% Block size, each LBP code is computed within a block of size bsizey*bsizex . </span><br><span class="line">(块大小，每个 LBP 代码在大小为 bsizey*bsizex 的块内计算)</span><br><span class="line">bsizey=ceil(max(maxy,0))-floor(min(miny,0))+1;</span><br><span class="line">bsizex=ceil(max(maxx,0))-floor(min(minx,0))+1;</span><br><span class="line"> </span><br><span class="line">% Coordinates of origin (0,0) in the block . (块中原点坐标)</span><br><span class="line">origy=1-floor(min(miny,0)); </span><br><span class="line">origx=1-floor(min(minx,0));</span><br><span class="line"></span><br><span class="line">% Calculate dx and dy;</span><br><span class="line">dx = xsize - bsizex;</span><br><span class="line">dy = ysize - bsizey;</span><br><span class="line"></span><br><span class="line">% Fill the center pixel matrix C . (填充中心像素矩阵)</span><br><span class="line">C = image(origy:origy+dy,origx:origx+dx);  %去边</span><br><span class="line"></span><br><span class="line">for i = 1:neighbors    %neighbors = 8 , 即8行</span><br><span class="line">  y = spoints(i,1)+origy;</span><br><span class="line">  x = spoints(i,2)+origx;</span><br><span class="line"></span><br><span class="line">% Interpolation is not needed, use original datatypes . (不需要插值，使用原始数据类型)</span><br><span class="line">N = image(ry:ry+dy,rx:rx+dx);</span><br><span class="line">D = N &gt;= C;    %i取不同值，N为八个点所能遍历到的矩阵。D为逻辑运算，如</span><br><span class="line">  B = [ 1 , 3 , 5 ] &gt;= [ 0 , 2 , 8 ]</span><br><span class="line">  B = [ 1 , 1 , 0 ]</span><br><span class="line"></span><br><span class="line">D = D1 * 20 + D2 * 21 + … + D8 * 27  %变换后矩阵</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -231,277 +270,107 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/25/LBP%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/" class="archive-article-date">
-        <time datetime="2022-03-23T12:51:11.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-23</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">那些注定要走过的日子</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/" target="_blank">那些注定要走过的日子</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/23/%E9%87%8D%E8%A6%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-        <time datetime="2022-03-23T01:21:46.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/23/%E9%87%8D%E8%A6%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" target="_blank">重要基本概念</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人工智能基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/23/LBP%E4%B8%8ELTP/" class="archive-article-date">
-        <time datetime="2022-03-23T00:59:03.074Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/23/LBP%E4%B8%8ELTP/" target="_blank">LBP与LTP</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人工智能基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/20/Lingo%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="archive-article-date">
-        <time datetime="2022-03-20T13:51:48.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-20</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/20/Lingo%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" target="_blank">Lingo线性规划</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lingo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/18/%E4%B8%89%E9%97%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-        <time datetime="2022-03-17T23:26:03.058Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/18/%E4%B8%89%E9%97%A8%E9%97%AE%E9%A2%98/" target="_blank">三门问题</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">概率论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/05/hello-world/" class="archive-article-date">
-        <time datetime="2022-03-05T05:54:01.814Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/05/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -542,8 +411,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
