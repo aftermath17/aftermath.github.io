@@ -18,7 +18,7 @@
 <meta property="og:description" content="LBP：把一个0-255(灰度值) (颜色)的图片映射成一个0-255(纹理值) (结构) 如将$\begin{bmatrix}117&amp; 21 &amp; 43\\64 &amp; 25 &amp; 9\\22&amp; 23 &amp;58\end{bmatrix}$(灰度值) 映成$\begin{bmatrix}1&amp; 0 &amp; 1\\1 &amp;  &amp; 0\\0">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-23T00:59:03.074Z">
-<meta property="article:modified_time" content="2022-03-23T13:32:20.394Z">
+<meta property="article:modified_time" content="2022-04-02T15:49:00.203Z">
 <meta property="article:author" content="Aftermath">
 <meta property="article:tag" content="人工智能基础">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">492字</span>
+      <span class="post-count">825字</span>
     </span>
   </span>
 
@@ -232,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -281,6 +281,31 @@
 <p>法二：LTP不分层计算法—即使用三进制：如果是紧凑的且唯一的，则好</p>
 <p>问：证明紧凑性且唯一性</p>
 <p>不足：LTP值范围过大，计算速度减慢</p>
+<hr>
+<p>#LBP会用到的基本概念</p>
+<p>范数，即欧几里得空间下的度量（距离函数）</p>
+<p>常用范数($C^{n}$空间为例):</p>
+<p>p-范数——</p>
+<p>1-范数：$║x║_{1}=│x_{1}│+│x_{2}│+…+│x_{n}│$</p>
+<p>2-范数：$║x║_{2}=（│x_{1}│^2+│x_{2}│^2+…+│x_{n}│^2）^{\frac{1}{2}}$</p>
+<p>∞-范数：$║x║_{∞}=max（│x_{1}│，│x_{2}│，…，│x_{n}│）$</p>
+<p>其中2-范数就是通常意义下的距离</p>
+<p>问：几何表示（菱形（p = 1）→圆形（p = 2）→方形（p = ∞））</p>
+<hr>
+<p>相似性：</p>
+<p>1.余弦相似性：余弦相似度越接近1，即夹角越接近0，越强</p>
+<p>2.Jaccard相似性：J（A,B）= (|A∩B|)/(|A∪B|),即集合相交部分占比</p>
+<p>注：度量一定能体现相似性，相似性不一定是度量。如余弦相似性</p>
+<hr>
+<p>度量可以重复使用——</p>
+<p>如先使用用范数得到一组结果，再使用Jaccard系数继续提高精度</p>
+<hr>
+<p>精度（p = s/r  ）固然是很好的标准，但仍要考虑顺序</p>
+<p>如Q: 1（T） 2（F） 3（T） 4（T）</p>
+<p>显然不如Q’： 1（T） 2（T） 3（T） 4（F）好</p>
+<p>改进方法：平均精度</p>
+<p>$mAP=\frac{\sum_{i=1}^{r}\frac{j_{s} }{pos} }{s} , j_{s}=\begin{cases}&amp;index,j_{i}=1\\&amp;0,j_{i}=0 \end{cases}$，s为检索正确的总个数</p>
+<p>eg. Q: 1（T） 2（T） 3（F） 4（T），则$mAP = \frac{\frac{1}{1}+\frac{2}{2}+\frac{0}{0}+\frac{3}{4}}{3}$</p>
 
     
 
@@ -368,11 +393,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/03/23/%E9%87%8D%E8%A6%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/03/23/%E9%82%A3%E4%BA%9B%E6%B3%A8%E5%AE%9A%E8%A6%81%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          重要基本概念
+          那些注定要走过的日子
         
       </div>
     </a>
@@ -562,15 +587,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">人工智能基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">

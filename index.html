@@ -510,114 +510,6 @@
 
 
   
-    <article id="post-重要基本概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/03/23/%E9%87%8D%E8%A6%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" target="_blank">重要基本概念</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/03/23/%E9%87%8D%E8%A6%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-        <time datetime="2022-03-23T01:21:46.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-23</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>范数，即欧几里得空间下的度量（距离函数）</p>
-<p>常用范数($C^{n}$空间为例):</p>
-<p>p-范数——</p>
-<p>1-范数：$║x║_{1}=│x_{1}│+│x_{2}│+…+│x_{n}│$</p>
-<p>2-范数：$║x║_{2}=（│x_{1}│^2+│x_{2}│^2+…+│x_{n}│^2）^{\frac{1}{2}}$</p>
-<p>∞-范数：$║x║_{∞}=max（│x_{1}│，│x_{2}│，…，│x_{n}│）$</p>
-<p>其中2-范数就是通常意义下的距离</p>
-<p>问：几何表示（菱形（p = 1）→圆形（p = 2）→方形（p = ∞））</p>
-<hr>
-<p>相似性：</p>
-<p>1.余弦相似性：余弦相似度越接近1，即夹角越接近0，越强</p>
-<p>2.Jaccard相似性：J（A,B）= (|A∩B|)/(|A∪B|),即集合相交部分占比</p>
-<p>注：度量一定能体现相似性，相似性不一定是度量。如余弦相似性</p>
-<hr>
-<p>度量可以重复使用——</p>
-<p>如先使用用范数得到一组结果，再使用Jaccard系数继续提高精度</p>
-<hr>
-<p>精度（p = s/r  ）固然是很好的标准，但仍要考虑顺序</p>
-<p>如Q: 1（T） 2（F） 3（T） 4（T）</p>
-<p>显然不如Q’： 1（T） 2（T） 3（T） 4（F）好</p>
-<p>改进方法：平均精度</p>
-<p>$mAP=\frac{\sum_{i=1}^{r}\frac{j_{s} }{pos} }{s} , j_{s}=\begin{cases}&amp;index,j_{i}=1\\&amp;0,j_{i}=0 \end{cases}$，s为检索正确的总个数</p>
-<p>eg. Q: 1（T） 2（T） 3（F） 4（T），则$mAP = \frac{\frac{1}{1}+\frac{2}{2}+\frac{0}{0}+\frac{3}{4}}{3}$</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人工智能基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/23/%E9%87%8D%E8%A6%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-LBP与LTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -685,6 +577,31 @@
 <p>法二：LTP不分层计算法—即使用三进制：如果是紧凑的且唯一的，则好</p>
 <p>问：证明紧凑性且唯一性</p>
 <p>不足：LTP值范围过大，计算速度减慢</p>
+<hr>
+<p>#LBP会用到的基本概念</p>
+<p>范数，即欧几里得空间下的度量（距离函数）</p>
+<p>常用范数($C^{n}$空间为例):</p>
+<p>p-范数——</p>
+<p>1-范数：$║x║_{1}=│x_{1}│+│x_{2}│+…+│x_{n}│$</p>
+<p>2-范数：$║x║_{2}=（│x_{1}│^2+│x_{2}│^2+…+│x_{n}│^2）^{\frac{1}{2}}$</p>
+<p>∞-范数：$║x║_{∞}=max（│x_{1}│，│x_{2}│，…，│x_{n}│）$</p>
+<p>其中2-范数就是通常意义下的距离</p>
+<p>问：几何表示（菱形（p = 1）→圆形（p = 2）→方形（p = ∞））</p>
+<hr>
+<p>相似性：</p>
+<p>1.余弦相似性：余弦相似度越接近1，即夹角越接近0，越强</p>
+<p>2.Jaccard相似性：J（A,B）= (|A∩B|)/(|A∪B|),即集合相交部分占比</p>
+<p>注：度量一定能体现相似性，相似性不一定是度量。如余弦相似性</p>
+<hr>
+<p>度量可以重复使用——</p>
+<p>如先使用用范数得到一组结果，再使用Jaccard系数继续提高精度</p>
+<hr>
+<p>精度（p = s/r  ）固然是很好的标准，但仍要考虑顺序</p>
+<p>如Q: 1（T） 2（F） 3（T） 4（T）</p>
+<p>显然不如Q’： 1（T） 2（T） 3（T） 4（F）好</p>
+<p>改进方法：平均精度</p>
+<p>$mAP=\frac{\sum_{i=1}^{r}\frac{j_{s} }{pos} }{s} , j_{s}=\begin{cases}&amp;index,j_{i}=1\\&amp;0,j_{i}=0 \end{cases}$，s为检索正确的总个数</p>
+<p>eg. Q: 1（T） 2（T） 3（F） 4（T），则$mAP = \frac{\frac{1}{1}+\frac{2}{2}+\frac{0}{0}+\frac{3}{4}}{3}$</p>
 
     
 
@@ -1269,15 +1186,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">人工智能基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
